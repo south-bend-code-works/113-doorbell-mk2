@@ -1,12 +1,13 @@
 var functions = require("firebase-functions");
 var request = require("request");
 
-exports.notifyNewSignup = functions.auth.user().onCreate(event => {
-  const name = event.data;
-  const appointment = name.appointment;
+exports.onPersonCreate = functions.database.ref('Doorbell/{person}').onCreate(snapshot => {
+  const data = snapshot.val();
+  const name = data.name;
+  const appointment = data.appointment;
   return request.post(
     "https://hooks.slack.com/services/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",
-    { json: { text: `${name} is at the door for ${appointment} !!` } }
+    { json: { text: `${name} is at the door for ${appointment}` } }
   );
 });
 

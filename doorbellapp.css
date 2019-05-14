@@ -2,6 +2,8 @@
   background-color: #00bfff;
   text-align: center;
   height: 15vh;
+  display: grid;
+
 }
 /* #ff8c00 */
 #logo-name {
@@ -38,4 +40,11 @@ button {
   border: 0;
   color: white;
   font-size: 3vh;
+}
+img {
+  /* text-align: center; */
+  margin-left: 39vw;
+  width: 22vw;
+  grid-row: 1;
+  align-self: center;
 }
