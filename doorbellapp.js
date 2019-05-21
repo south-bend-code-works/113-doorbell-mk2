@@ -11,6 +11,8 @@ window.onload=function(){
     };
     firebase.initializeApp(config);
 
+  
+
     var database = firebase.database();
     document.getElementById('submit-button').onclick=set;
 
